@@ -8,9 +8,9 @@
 
 # EXAMPLES
 
-tora ssh\n
-tora nc/netcat\n
-tora curl\n
-etc.\n
-etc.\n
+1. tora ssh
+2. tora nc/netcat
+3. tora curl
+4. etc.
+5. etc.
 
