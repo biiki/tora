@@ -52,7 +52,7 @@ void execute_with_torsocks(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     // If the first argument is "exec", treat it as a command to be run with torsocks
-    if (argc > 1 && strcmp(argv[1], " ") == 0) {
+    if (argc > 1 && strcmp(argv[1], "exec") == 0) {
         // Call the function to execute a command with torsocks
         execute_with_torsocks(argc - 1, &argv[1]);
     }
@@ -71,8 +71,8 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    host = argv[1];  // AWS web server host
-    port = atoi(argv[2]);  // AWS web server port
+    host = argv[1];  
+    port = atoi(argv[2]);  
 
     // Create a socket
     s = socket(AF_INET, SOCK_STREAM, 0);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    // Set up the proxy server's address (Tor proxy)
+    // Set up the proxy server's address
     sock.sin_family = AF_INET;
     sock.sin_port = htons(PROXYPORT);
     sock.sin_addr.s_addr = inet_addr(PROXY);
@@ -131,7 +131,7 @@ int main(int argc, char *argv[]) {
 
     printf("Successfully connected through the SOCKS5 proxy to %s:%d\n", host, port);
 
-    // Cleanup
+    // Cleanup crew
     free(req);
     close(s);
     return 0;
