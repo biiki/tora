@@ -3,7 +3,7 @@
 1. Open the dir and run the "make" command.
 2. Set +x perms to the "tora" file.
 3. Move the "tora" file to the sys path. --> /usr/local/bin/ which allows the use of "tora" directly.
-4. Run tora [command].
+4. Run tora exec [command].
 
 
 # EXAMPLES
